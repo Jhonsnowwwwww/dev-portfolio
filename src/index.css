@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cyberpunk Portfolio Design System - All colors are HSL */
+
+@layer base {
+  :root {
+    /* Cyberpunk Dark Theme */
+    --background: 220 27% 8%;
+    --foreground: 180 100% 90%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 220 27% 12%;
+    --popover-foreground: 180 100% 90%;
+
+    /* Neon Electric Colors */
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 27% 8%;
+    --primary-glow: 195 100% 70%;
+
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 220 27% 8%;
+
+    --muted: 220 27% 15%;
+    --muted-foreground: 180 50% 70%;
+
+    --accent: 145 100% 50%;
+    --accent-foreground: 220 27% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 100% 90%;
+
+    --border: 220 27% 20%;
+    --input: 220 27% 15%;
+    --ring: 195 100% 50%;
+
+    /* Cyberpunk Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(195 100% 50%), hsl(280 100% 60%));
+    --gradient-neon: linear-gradient(90deg, hsl(195 100% 50%), hsl(145 100% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 27% 8%), hsl(220 27% 12%));
+    --gradient-glow: linear-gradient(135deg, hsl(195 100% 50% / 0.1), hsl(280 100% 60% / 0.1));
+
+    /* Neon Effects */
+    --neon-cyan: 0 0 20px hsl(195 100% 50%), 0 0 40px hsl(195 100% 50%);
+    --neon-purple: 0 0 20px hsl(280 100% 60%), 0 0 40px hsl(280 100% 60%);
+    --neon-green: 0 0 20px hsl(145 100% 50%), 0 0 40px hsl(145 100% 50%);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Enhanced Dark Mode */
+  .dark {
+    --background: 220 27% 5%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 27% 8%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 27% 10%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 195 100% 60%;
+    --primary-foreground: 220 27% 5%;
+    --primary-glow: 195 100% 80%;
+
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 220 27% 5%;
+
+    --muted: 220 27% 12%;
+    --muted-foreground: 180 50% 80%;
+
+    --accent: 145 100% 60%;
+    --accent-foreground: 220 27% 5%;
+
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 220 27% 25%;
+    --input: 220 27% 18%;
+    --ring: 195 100% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', 'system-ui', sans-serif;
+  }
+
+  /* Cyberpunk Typography */
+  .cyber-title {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px hsl(195 100% 50% / 0.5));
+  }
+
+  .neon-text {
+    color: hsl(var(--primary));
+    text-shadow: var(--neon-cyan);
+  }
+
+  /* Glassmorphism Effects */
+  .glass {
+    background: hsl(var(--card) / 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
+  .glass-strong {
+    background: hsl(var(--card) / 0.2);
+    backdrop-filter: blur(30px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--secondary)));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: var(--neon-cyan);
+  }
+}
